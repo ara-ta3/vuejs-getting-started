@@ -13,6 +13,7 @@
     "tests"
   ],
   "dependencies": {
-    "vue": "~0.12.8"
+    "vue": "~0.12.8",
+    "marked": "~0.3.4"
   }
 }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script src="./vendor/vue/dist/vue.js" defer></script>
+        <script src="./js/githubcommit.js" defer></script>
+        <style>
+            #demo {
+                font-family: 'Helvetica', Arial, sans-serif;
+            }
+            a {
+                text-decoration: none;
+                color: #f66;
+            }
+            li {
+                line-height: 1.5em;
+                margin-bottom: 20px;
+            }
+            .author, .date {
+                font-weight: bold;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div id="demo">
+            <h1>Latest {{name}}/{{repo}} Commits</h1>
+            <template v-repeat="b:branches">
+                <input type="radio"
+                    name="branch"
+                    id="{{*b}}"
+                    value="{{*b}}"
+                    v-model="currentBranch">
+                <label for="{{*b}}">{{*b}}</label>
+            </template>
+            <p>{{name}}/{{repo}}@{{currentBranch}}</p>
+            <ul>
+                <li v-repeat="commits">
+                <a href="{{html_url}}" target="_blank" class="commit">
+                    {{sha.slice(0, 7)}}
+                </a>
+                - <span class="message">{{commit.message | truncate}}</span><br>
+                by <span class="author">{{commit.author.name}}</span>
+                at <span class="date">{{commit.author.date | formatDate}}</span>
+                </li>
+            </ul>
+        </div>
+    
+</body>
+</html>

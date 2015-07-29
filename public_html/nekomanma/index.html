@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4コマんま</title>
+    <link rel="stylesheet" href="../vendor/bootstrap/dist/css/bootstrap.css" type="text/css" media="screen" charset="utf-8">
+    <style>
+        body {
+            padding-top: 50px;
+        }
+        .starter-template {
+            padding: 40px 15px;
+            text-align: center;
+        }
+        footer {
+            padding-top: 100px;
+        }
+    </style>
+    <script src="../vendor/vue/dist/vue.js" defer></script>
+    <script src="../vendor/jquery/dist/jquery.js" defer></script>
+    <script src="../vendor/bootstrap/dist/js/bootstrap.js" defer></script>
+    <script src="../js/app.js" defer></script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">４コマんま</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+    </nav>
+
+    <div class="container">
+        <div class="starter-template">
+            <h1>４コマんま</h1>
+            <p class="lead">画像を置いて４コマレシピを作ってみよう</p>
+        </div>
+
+    </div><!-- /.container -->
+
+    <div id="app" class="row">
+        <div class="container">
+            <button type="button" class="btn btn-default" v-on="click: submit">投稿する</button>
+        </div>
+
+        <template v-repeat="segments">
+            <template v-if=" n % 2 == 1">
+                <div class="col-md-1"></div>
+            </template>
+            <div class="col-md-5">
+                <h3 class="text-center"><span v-text="n"></span>コマ目</h3>
+                <div class="form-group">
+                    <img class="col-md-12 img-thumbnail" v-attr="src:src" alt="">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="簡単な説明" v-attr="value:description">
+                </div>
+            </div>
+            <template v-if=" n % 2 == 0">
+                <div class="col-md-1"></div>
+                <div class="row"></div>
+            </template>
+        </template>
+    </div>
+
+    <div class="container">
+        <button type="button" class="btn btn-default" v-on="click: submit">投稿する</button>
+    </div>
+
+
+    <footer class="footer">
+    <div class="container">
+        <p class="text-muted">COPYRIGHT <C> TEAM ねこまんま, ALL RIGHTS RESERVED.</p>
+    </div>
+    </footer>
+</body>
+</html>

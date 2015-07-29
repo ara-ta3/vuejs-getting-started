@@ -9,3 +9,5 @@ install:
 
 server:
 	php -S $(host):$(port) -t public_html
+
+

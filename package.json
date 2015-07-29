@@ -1,0 +1,18 @@
+{
+  "name": "vuejs-getting-started",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@my.github.com/ara-ta3/vuejs-getting-started.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "bower": "^1.4.1"
+  }
+}

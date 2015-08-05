@@ -2,7 +2,7 @@
     "use strict"
 
     var Gacha = function(master) {
-        var master = master;
+        this.master = master;
         this.draw   = function () {
             var idx = getRamdomIndex(this.master.length);
             return this.master[idx];
@@ -14,7 +14,7 @@
     };
 
     var PastRecord  = function(master) {
-        var master = master;
+        this.master = master;
         this.past   = [];
 
         this.appendResult = function(item) {

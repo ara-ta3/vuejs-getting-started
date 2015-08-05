@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../vendor/bootstrap/dist/css/bootstrap.css" type="text/css" media="screen" charset="utf-8">
+    <style>
+        body {
+            padding-top: 50px;
+        }
+        .starter-template {
+            padding: 40px 15px;
+            text-align: center;
+        }
+        footer {
+            padding-top: 100px;
+        }
+    </style>
+    <script src="../vendor/vue/dist/vue.js" defer></script>
+    <script src="../vendor/jquery/dist/jquery.js" defer></script>
+    <script src="../vendor/bootstrap/dist/js/bootstrap.js" defer></script>
+    <script src="../js/gacha.js" defer></script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">ガチャ</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+    </nav>
+
+    <div id="app">
+        <div class="container">
+            <div class="starter-template">
+                <h1>ガチャシステム</h1>
+                <p class="lead">ガチャを引くのです。</p>
+                <button class="btn btn-primary" v-on="click: draw">ドロー！</button>
+            </div>
+        </div><!-- /.container -->
+
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-5">
+                <div class="form-group">
+                    <h3 class="text-center">引いたアイテム</h3>
+                    <p class="well text-center" v-text="item"></p>
+                </div>
+                <div class="form-group">
+                    <h3 class="text-center">履歴</h3>
+                    <p class="well" v-text="history"></p>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="form-group">
+                    <h3 class="text-center">残りアイテム</h3>
+                    <p class="well" v-text="rest"></p>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+        <p class="text-muted">COPYRIGHT <C> t-ara, ALL RIGHTS RESERVED.</p>
+    </div>
+    </footer>
+
+</body>
+</html>

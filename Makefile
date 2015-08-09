@@ -11,5 +11,5 @@ install:
 server:
 	php -S $(host):$(port) -t public_html
 
-webpack-gacha:
-	$(WEBPACK) src/gacha/app.js public_html/js/gacha-app.js
+webpack:
+	@$(WEBPACK)

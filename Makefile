@@ -4,6 +4,7 @@ host=localhost
 port=8080
 WEBPACK=./node_modules/webpack/bin/webpack.js
 MOCHA=./node_modules/mocha/bin/mocha
+UGLIFY=./node_modules/uglify-js/bin/uglifyjs
 
 .PHONY:test
 
@@ -16,6 +17,10 @@ server:
 
 webpack:
 	@$(WEBPACK)
+	make uglify target-js="gacha-app.js"
 
 test:
 	@$(MOCHA) test/
+
+uglify:
+	@$(UGLIFY) -c -o public_html/js/$(target-js) dist/$(target-js)

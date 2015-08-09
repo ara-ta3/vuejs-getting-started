@@ -1,5 +1,7 @@
 "use strict"
 
+var Vue = require('vue');
+
 var Gacha = require("./Gacha.js");
 
 var PastRecord  = require("./PastRecord.js");

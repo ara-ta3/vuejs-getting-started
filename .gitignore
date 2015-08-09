@@ -1,3 +1,5 @@
 node_modules
 public_html/vendor
 *.swp
+dist/*
+!dist/.gitkeep

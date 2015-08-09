@@ -1,4 +1,4 @@
-module.exports = (function() {
+module.exports = function(elementId) {
     var Vue = require('vue');
 
     var Gacha = require("./Gacha.js");
@@ -12,7 +12,7 @@ module.exports = (function() {
     master.appendData(["A","B","C"], 5);
 
     return new Vue({
-        el: '#app',
+        el: elementId,
         data: {
             gacha: new Gacha(master.getGachaItems()),
             record: new PastRecord(master.getAllData()),
@@ -33,4 +33,4 @@ module.exports = (function() {
             }
         }
     });
-})();
+};

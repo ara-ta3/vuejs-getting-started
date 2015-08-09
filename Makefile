@@ -3,6 +3,9 @@ npm=$(shell which npm)
 host=localhost
 port=8080
 WEBPACK=./node_modules/webpack/bin/webpack.js
+MOCHA=./node_modules/mocha/bin/mocha
+
+.PHONY:test
 
 install:
 	$(npm) install
@@ -13,3 +16,6 @@ server:
 
 webpack:
 	@$(WEBPACK)
+
+test:
+	@$(MOCHA) test/
